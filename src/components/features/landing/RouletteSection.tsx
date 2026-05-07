@@ -63,7 +63,7 @@ export function RouletteSection() {
           <div className="relative group">
             {/* Pointer */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-4 z-20">
-              <ArrowDown className="w-12 h-12 text-primary drop-shadow-lg" />
+              <ArrowDown className="w-12 h-12 text-black drop-shadow-lg" />
             </div>
             
             {/* The Wheel */}
