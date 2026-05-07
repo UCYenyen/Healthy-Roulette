@@ -1,0 +1,188 @@
+"use client";
+
+import React, { useState } from "react";
+import { Flame, ArrowDown, Utensils, Clock, ShoppingCart, Check, Leaf } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
+
+const foods = [
+  { name: 'Garden Salad', desc: 'Fresh greens with balsamic glaze and toasted walnuts.', kcal: '320', time: '10' },
+  { name: 'Salmon Poke Bowl', desc: 'Sustainably sourced salmon with edamame and brown rice.', kcal: '540', time: '15' },
+  { name: 'Hummus Wrap', desc: 'Whole wheat wrap with roasted veggies and garlic hummus.', kcal: '410', time: '12' },
+  { name: 'Lentil Soup', desc: 'Hearty organic lentils with carrots and fresh herbs.', kcal: '280', time: '20' },
+  { name: 'Quinoa Bowl', desc: 'Tri-color quinoa with avocado, black beans, and lime.', kcal: '450', time: '15' },
+  { name: 'Acai Berry Bowl', desc: 'Pure acai topped with granola, banana, and honey.', kcal: '380', time: '8' },
+  { name: 'Zucchini Pasta', desc: 'Spiralized zucchini with homemade pesto and cherry tomatoes.', kcal: '290', time: '18' },
+  { name: 'Tofu Tacos', desc: 'Corn tortillas with marinated tofu and spicy slaw.', kcal: '350', time: '20' }
+];
+
+export function RouletteSection() {
+  const [isSpinning, setIsSpinning] = useState(false);
+  const [rotation, setRotation] = useState(0);
+  const [winner, setWinner] = useState<typeof foods[0] | null>(null);
+
+  const spinWheel = () => {
+    if (isSpinning) return;
+
+    const extraRotations = Math.floor(Math.random() * 5) + 5; // 5 to 10 full spins
+    const randomDegree = Math.floor(Math.random() * 360);
+    const totalDegree = extraRotations * 360 + randomDegree;
+    
+    setIsSpinning(true);
+    setRotation(prev => prev + totalDegree);
+    setWinner(null);
+
+    setTimeout(() => {
+      setIsSpinning(false);
+      // Calculate which segment it landed on
+      // The wheel is rotated, so we need to find the final normalized angle
+      const finalAngle = (rotation + totalDegree) % 360;
+      // 8 segments, each 45 degrees
+      // The pointer is at the top (0 degrees in SVG, but we rotate the wheel)
+      // index = floor((360 - finalAngle) / 45) % 8
+      const index = Math.floor((360 - finalAngle) / 45) % 8;
+      setWinner(foods[index]);
+    }, 4000);
+  };
+
+  return (
+    <section className="w-full py-20 px-6 bg-background overflow-hidden" id="how-it-works">
+      <div className="max-w-7xl mx-auto flex flex-col items-center">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-heading font-black mb-4 text-foreground">
+            Can't Decide? <span className="text-primary">Spin the Wheel!</span>
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-xl mx-auto">
+            Let fate choose your next healthy meal. Every slice is a chef-curated nutrition-packed delight.
+          </p>
+        </div>
+
+        <div className="relative w-full flex flex-col lg:flex-row items-center justify-center gap-16">
+          {/* Roulette Wheel Container */}
+          <div className="relative group">
+            {/* Pointer */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-4 z-20">
+              <ArrowDown className="w-12 h-12 text-primary drop-shadow-lg" />
+            </div>
+            
+            {/* The Wheel */}
+            <div 
+              className="relative w-[320px] h-[320px] md:w-[500px] md:h-[500px] rounded-full border-[12px] border-white shadow-[0_0_50px_rgba(76,175,80,0.2)] overflow-hidden transition-transform duration-[4000ms] ease-[cubic-bezier(0.1,0,0.1,1)]"
+              style={{ transform: `rotate(${rotation}deg)` }}
+            >
+              <svg viewBox="0 0 100 100" className="w-full h-full">
+                {/* Wheel Segments */}
+                <path d="M 50 50 L 50 0 A 50 50 0 0 1 85.3 14.6 Z" className="fill-primary" />
+                <path d="M 50 50 L 85.3 14.6 A 50 50 0 0 1 100 50 Z" className="fill-secondary" />
+                <path d="M 50 50 L 100 50 A 50 50 0 0 1 85.3 85.4 Z" className="fill-primary/90" />
+                <path d="M 50 50 L 85.3 85.4 A 50 50 0 0 1 50 100 Z" className="fill-secondary/90" />
+                <path d="M 50 50 L 50 100 A 50 50 0 0 1 14.6 85.4 Z" className="fill-primary/80" />
+                <path d="M 50 50 L 14.6 85.4 A 50 50 0 0 1 0 50 Z" className="fill-secondary/80" />
+                <path d="M 50 50 L 0 50 A 50 50 0 0 1 14.6 14.6 Z" className="fill-primary/70" />
+                <path d="M 50 50 L 14.6 14.6 A 50 50 0 0 1 50 0 Z" className="fill-secondary/70" />
+                
+                {/* Labels */}
+                <g className="text-[4px] font-bold pointer-events-none">
+                  {foods.map((food, i) => (
+                    <text 
+                      key={i}
+                      x="50" 
+                      y="20" 
+                      textAnchor="middle"
+                      dominantBaseline="middle"
+                      transform={`rotate(${i * 45 + 22.5} 50 50)`}
+                      className={cn(i % 2 === 1 ? "fill-primary" : "fill-white")}
+                    >
+                      {food.name.split(' ')[0].toUpperCase()}
+                    </text>
+                  ))}
+                </g>
+              </svg>
+            </div>
+
+            {/* Center Button - Outside the rotating div so it stays upright */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div className="w-20 h-20 md:w-28 md:h-28 bg-white rounded-full shadow-2xl flex items-center justify-center z-10 border-4 border-secondary pointer-events-auto">
+                <button 
+                  onClick={spinWheel}
+                  disabled={isSpinning}
+                  className="w-16 h-16 md:w-20 md:h-20 bg-primary text-primary-foreground rounded-full flex flex-col items-center justify-center font-black text-xs md:text-sm hover:scale-105 transition-transform active:scale-95 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSpinning ? "SPINNING" : "SPIN"}
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Result Card */}
+          <div className="w-full lg:w-[400px] flex flex-col gap-6">
+            <Card className="p-8 rounded-3xl border border-border shadow-xl relative overflow-hidden bg-card">
+              <div className="absolute top-0 right-0 p-4 opacity-10">
+                <Utensils className="w-24 h-24" />
+              </div>
+              
+              <div className="mb-6">
+                <span className="px-3 py-1 bg-secondary text-primary rounded-full text-xs font-bold uppercase tracking-widest">
+                  {winner ? "Your Selection" : "Get Started"}
+                </span>
+                <h2 className="text-3xl font-heading font-black mt-2 text-foreground">
+                  {isSpinning ? "Spinning..." : winner ? winner.name : "Spin to decide!"}
+                </h2>
+                <p className="text-muted-foreground mt-2">
+                  {isSpinning ? "The kitchen is getting ready..." : winner ? winner.desc : "Click the button to find your perfect meal."}
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <div className="flex items-center justify-between p-4 bg-background rounded-2xl border border-border">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+                      <Flame className="w-5 h-5" />
+                    </div>
+                    <span className="font-bold text-foreground">Calories</span>
+                  </div>
+                  <span className="font-black text-primary">
+                    {isSpinning ? "--" : winner ? winner.kcal : "--"} kcal
+                  </span>
+                </div>
+                
+                <div className="flex items-center justify-between p-4 bg-background rounded-2xl border border-border">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-secondary flex items-center justify-center text-primary">
+                      <Clock className="w-5 h-5" />
+                    </div>
+                    <span className="font-bold text-foreground">Prep Time</span>
+                  </div>
+                  <span className="font-black text-foreground">
+                    {isSpinning ? "--" : winner ? winner.time : "--"} min
+                  </span>
+                </div>
+              </div>
+
+              <Button 
+                disabled={!winner || isSpinning}
+                className="w-full mt-8 py-6 bg-primary text-primary-foreground rounded-2xl font-black shadow-lg shadow-primary/20 hover:shadow-xl hover:-translate-y-1 transition-all flex items-center justify-center gap-2"
+              >
+                Order This Meal
+                <ShoppingCart className="w-5 h-5" />
+              </Button>
+            </Card>
+
+            <div className="flex items-center gap-4 px-4">
+              <div className="flex -space-x-2">
+                <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white border-2 border-white">
+                  <Check className="w-4 h-4" />
+                </div>
+                <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-primary border-2 border-white">
+                  <Leaf className="w-4 h-4" />
+                </div>
+              </div>
+              <p className="text-xs font-medium text-muted-foreground">Certified healthy by our nutritionists</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
