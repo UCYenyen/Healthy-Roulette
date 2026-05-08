@@ -39,9 +39,9 @@ export function FeatureCards() {
           <p className="text-muted-foreground max-w-2xl mx-auto">Choose your goal and let our roulette spin the perfect meal plan for your lifestyle.</p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8" data-gsap="stagger-container">
           {features.map((feature, index) => (
-            <Card key={index} className="p-8 bg-card rounded-3xl border border-border hover:border-primary/50 transition-all hover:shadow-xl group">
+            <Card key={index} data-gsap="stagger-item" className="p-8 bg-card rounded-3xl border border-border hover:border-primary/50 transition-all hover:shadow-xl group">
               <div className={`w-14 h-14 ${feature.bgColor} ${feature.textColor} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
                 <feature.icon className="w-8 h-8" />
               </div>

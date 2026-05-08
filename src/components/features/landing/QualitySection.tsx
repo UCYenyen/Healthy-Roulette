@@ -7,7 +7,7 @@ export function QualitySection() {
     <section className="w-full py-16 px-6 bg-white">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Image Card on Left */}
-        <div className="relative">
+        <div className="relative" data-gsap="parallax" data-speed="0.1">
           <div className="bg-secondary/40 rounded-[2.5rem] p-4 shadow-inner">
             <div className="aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white">
               <img 
@@ -25,7 +25,7 @@ export function QualitySection() {
         </div>
         
         {/* Description on Right */}
-        <div className="space-y-6">
+        <div className="space-y-6" data-gsap="reveal">
           <div className="w-12 h-1 bg-primary rounded-full"></div>
           <h2 className="text-4xl font-heading font-bold leading-tight text-foreground">Taste the Quality of <br/>Real, Whole Foods</h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
