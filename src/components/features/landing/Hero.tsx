@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Zap, Star } from "lucide-react";
 import Image from "next/image";
-
+import Link from "next/link";
 export function Hero() {
   return (
     <section className="relative w-full py-12 md:py-20 px-6 overflow-hidden">
@@ -10,24 +10,24 @@ export function Hero() {
         <div className="z-10" data-gsap="reveal">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary text-primary rounded-full text-sm font-bold mb-6">
             <Zap className="w-4 h-4" />
-            <span>FRESH & ORGANIC DIETS</span>
+            <span>SOLUSI MAKANAN SEHAT</span>
           </div>
           <h1 className="text-5xl md:text-7xl font-heading font-black leading-tight mb-6">
-            Spin the Wheel, <br/>
-            <span className="text-primary">Eat Healthy</span> Every Day.
+            Bingung Makan? <br/>
+            <span className="text-primary">Putar & Temukan</span> Makananmu.
           </h1>
           <p className="text-lg text-muted-foreground mb-8 max-w-lg leading-relaxed">
-            Stop wondering what to cook. Healthy Roulette curates personalized, chef-inspired diet plans delivered from our kitchen to your table.
+            Healthy Roulette adalah cara menyenangkan dan interaktif untuk menemukan tempat makanan sehat di Surabaya Barat secara acak, lengkap dengan visual, lokasi, dan gambaran menu.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button className="px-8 py-6 h-auto bg-primary text-primary-foreground rounded-full text-lg font-bold shadow-xl shadow-primary/40 hover:shadow-2xl transition-all flex items-center justify-center gap-2">
-              View Today's Menu
+            <Button className="px-8 py-6 h-auto bg-primary text-primary-foreground rounded-full text-lg font-bold shadow-xl shadow-primary/40 hover:shadow-2xl transition-all flex items-center justify-center gap-2" onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}>
+              <Link href="roulette">Coba Putar Sekarang</Link>
               <ArrowRight className="w-5 h-5" />
             </Button>
-            <Button variant="outline" className="px-8 py-6 h-auto bg-white border-2 border-border rounded-full text-lg font-bold hover:bg-muted transition-colors flex items-center justify-center gap-2">
+            {/* <Button variant="outline" className="px-8 py-6 h-auto bg-white border-2 border-border rounded-full text-lg font-bold hover:bg-muted transition-colors flex items-center justify-center gap-2">
               <Play className="w-5 h-5" />
-              See How It Works
-            </Button>
+              Cara Kerjanya
+            </Button> */}
           </div>
           
           <div className="mt-12 flex items-center gap-4">
@@ -37,7 +37,7 @@ export function Hero() {
               <img className="w-12 h-12 rounded-full border-4 border-background" src="https://randomuser.me/api/portraits/women/68.jpg" alt="User" />
             </div>
             <p className="text-sm font-medium">
-              <span className="font-bold text-primary">2,500+</span> happy healthy eaters this week
+              Bergabung dengan eksplorator <span className="font-bold text-primary">Healthy Food</span> lainnya
             </p>
           </div>
         </div>

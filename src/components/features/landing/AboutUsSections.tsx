@@ -16,13 +16,13 @@ export function AboutUsSections() {
         <div className="max-w-4xl mx-auto text-center" data-gsap="reveal">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary text-primary rounded-full text-sm font-bold mb-6">
             <Heart className="w-5 h-5" />
-            <span>OUR MISSION</span>
+            <span>MASALAH & LATAR BELAKANG</span>
           </div>
           <h1 className="text-4xl md:text-6xl font-heading font-black leading-tight mb-8 text-foreground">
-            We&apos;re making healthy eating <span className="text-primary">exciting again.</span>
+            Mencari Makanan Sehat <span className="text-primary">Kini Lebih Fun.</span>
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Healthy Roulette was born from a simple observation: most people want to eat better, but the mental fatigue of planning meals often leads to poor choices. We&apos;re here to take the guesswork out of nutrition.
+            Tren healthy food sedang marak di Indonesia, tetapi banyak masyarakat, khususnya warga Surabaya Barat, yang masih kesulitan menemukan referensi karena kurangnya eksplorasi. Terlebih, meningkatnya tren ini tidak disertai dengan bertambahnya jumlah tempat makanan sehat secara masif.
           </p>
         </div>
       </section>
@@ -48,26 +48,26 @@ export function AboutUsSections() {
                 </div>
                 <span className="text-2xl font-black text-foreground">50+</span>
               </div>
-              <p className="text-sm text-muted-foreground font-medium">Passionate chefs and nutritionists on our team.</p>
+              <p className="text-sm text-muted-foreground font-medium">Rekomendasi tempat healthy food di Surabaya Barat.</p>
             </div>
           </div>
 
           <div className="space-y-8" data-gsap="reveal">
             <div className="w-12 h-1 bg-primary rounded-full"></div>
             <h2 className="text-3xl md:text-4xl font-heading font-bold leading-tight text-foreground">
-              It started in a small kitchen in Portland.
+              Solusi Kami: Fitur Spin Interaktif.
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Our founder, a nutritionist frustrated by the &quot;boring&quot; reputation of healthy food, decided to gamify the experience. What started as a local meal-prep service has grown into a community of thousands who love the surprise of a healthy roulette spin.
+              Website sederhana dengan fitur spin untuk menghasilkan rekomendasi tempat healthy food secara acak. Kami melengkapinya dengan visual makanan, informasi lokasi, dan gambaran kasar tentang menu yang dijual, menghemat waktu Anda untuk menemukan makanan sehat yang tepat.
             </p>
             <div className="grid grid-cols-2 gap-6">
               <div className="p-4 bg-background rounded-2xl border border-border">
-                <h4 className="font-bold text-primary text-lg mb-1">Authentic</h4>
-                <p className="text-sm text-muted-foreground">Real ingredients, real people, real results.</p>
+                <h4 className="font-bold text-primary text-lg mb-1">Eksplorasi</h4>
+                <p className="text-sm text-muted-foreground">Mendorong penemuan tempat makan baru di Surabaya Barat.</p>
               </div>
               <div className="p-4 bg-background rounded-2xl border border-border">
-                <h4 className="font-bold text-primary text-lg mb-1">Personal</h4>
-                <p className="text-sm text-muted-foreground">Tailored to your specific dietary needs.</p>
+                <h4 className="font-bold text-primary text-lg mb-1">Interaktif</h4>
+                <p className="text-sm text-muted-foreground">Memberikan pengalaman seru lewat roulette wheel yang acak.</p>
               </div>
             </div>
           </div>
@@ -78,25 +78,25 @@ export function AboutUsSections() {
       <section className="w-full py-20 px-6 bg-background">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16" data-gsap="reveal">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 text-foreground">Our Core Values</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">The principles that guide every recipe we create and every meal we deliver.</p>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 text-foreground">Tujuan Utama Kami</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">Apa yang ingin kami capai melalui platform Healthy Roulette untuk warga Surabaya Barat.</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8" data-gsap="stagger-container">
             <ValueCard 
-              icon={ShieldCheck} 
-              title="Quality First" 
-              description="We never compromise on ingredients. If it's not organic and fresh, it doesn't make it to our kitchen." 
-            />
-            <ValueCard 
               icon={Smile} 
-              title="Food as Joy" 
-              description="Healthy food should taste amazing. We employ world-class chefs to ensure every bite is a celebration." 
+              title="Lebih Fun & Interaktif" 
+              description="Memberikan pengalaman seru melalui gamifikasi dalam menentukan makanan sehat Anda secara acak." 
             />
             <ValueCard 
               icon={Globe} 
-              title="Sustainability" 
-              description="From compostable packaging to zero-waste kitchens, we care about the planet as much as your health." 
+              title="Mudah Ditemukan" 
+              description="Membantu Anda menemukan tempat-tempat healthy food tersembunyi di Surabaya Barat dengan lebih gampang." 
+            />
+            <ValueCard 
+              icon={Flame} 
+              title="Hemat Waktu" 
+              description="Tak perlu lagi membuang waktu memikirkan tujuan; biarkan sistem kami yang memberikan rekomendasi instan." 
             />
           </div>
         </div>
@@ -107,11 +107,11 @@ export function AboutUsSections() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6" data-gsap="reveal">
             <div>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 text-foreground">Meet the Visionaries</h2>
-              <p className="text-muted-foreground max-w-xl">A group of food-obsessed experts dedicated to your well-being.</p>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 text-foreground">Tim di Balik Layar</h2>
+              <p className="text-muted-foreground max-w-xl">Berdedikasi untuk memberikan rekomendasi makanan sehat terbaik untuk Anda.</p>
             </div>
             <Button variant="outline" className="rounded-full border-2 border-primary text-primary font-bold px-8 py-6 hover:bg-primary hover:text-white transition-all">
-              Join Our Team
+              Hubungi Kami
             </Button>
           </div>
 
@@ -150,17 +150,17 @@ export function AboutUsSections() {
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full -ml-32 -mb-32 blur-3xl"></div>
           
           <h2 className="text-3xl md:text-5xl font-heading font-black mb-6 relative z-10 text-white">
-            Ready to spin for your health?
+            Siap Mencari Makanan Sehatmu?
           </h2>
           <p className="text-lg opacity-90 mb-10 max-w-2xl mx-auto relative z-10 text-white/90">
-            Join thousands of others who have simplified their lives and improved their health with Healthy Roulette.
+            Ayo coba fitur spin kami sekarang dan temukan rekomendasi tempat makan sehat tersembunyi di Surabaya Barat dengan cara yang seru!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
-            <Button className="px-10 py-7 bg-white text-primary rounded-full text-lg font-bold shadow-xl hover:scale-105 transition-transform hover:bg-white/90">
-              Get Started Now
+            <Button className="px-10 py-7 bg-white text-primary rounded-full text-lg font-bold shadow-xl hover:scale-105 transition-transform hover:bg-white/90" onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}>
+              Mulai Spin Sekarang
             </Button>
             <Button variant="outline" className="px-10 py-7 bg-transparent border-2 border-white text-white rounded-full text-lg font-bold hover:bg-white hover:text-primary transition-all">
-              View Menu
+              Lihat Lokasi Lain
             </Button>
           </div>
         </div>

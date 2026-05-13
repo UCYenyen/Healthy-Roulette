@@ -1,0 +1,13 @@
+import Foods from "@/types/food.md";
+
+export const foods: Foods[] = [
+  { restaurant: "Greenly", menu_images: ["/restaurants/greenly.webp"], link_web: 'https://www.greenly.id/menus?menu=dinner-menu', link_maps: [`https://maps.app.goo.gl/BEhi7U2LYUzTjKWg7?g_st=aw`, `https://maps.app.goo.gl/PLTWF8sz4EcPg33D8?g_st=aw`] },
+  { restaurant: "Crunchaus", menu_images: ["/restaurants/crunchhaus.webp"], link_web: 'https://gofood.co.id/en/surabaya/restaurant/crunchaus-salads-tunjungan-plaza-3-22707308-20d0-4372-af7e-c9d86f589628', link_maps: ["https://maps.app.goo.gl/62NxXodh7W1Rf4ks7?g_st=aw", "https://maps.app.goo.gl/9r5jwf2pKh1QLtKS8?g_st=aw"] },
+  { restaurant: "Grainsly", menu_images: ["/restaurants/grainsly.webp"], link_web: 'https://gofood.co.id/en/jakarta/restaurant/grainsly-tanjung-duren-fe00a803-76b5-45aa-8573-987b497d5e7f', link_maps: ["https://maps.app.goo.gl/dYbxL2R5KvWnocWcA?g_st=aw", "https://maps.app.goo.gl/8ApZa52aJha6eQWf9?g_st=aw"] },
+  { restaurant: "Nude", menu_images: ["/restaurants/nude.webp"], link_web: 'https://gofood.co.id/surabaya/restaurant/nude-bake-healthy-bakery-sambikerep-673f7ddb-5cc7-44cf-858b-03897b214f26', link_maps: ["https://maps.app.goo.gl/Tc1ZQ3h94qgPrBAh6?g_st=aw", "https://maps.app.goo.gl/LfLX5UU5o8WJXR6u8?g_st=aw"] },
+  { restaurant: "Loulabites", menu_images: ["/restaurants/loulabites.webp"], link_web: 'https://gofood.co.id/en/surabaya/restaurant/loulabites-artisan-bakery-north-junction-rb-05-cland-e5a167bb-48d5-4869-ac23-a19407b71438', link_maps: ["https://maps.app.goo.gl/yoXVQUBtf3VSPGy29?g_st=aw"] },
+  { restaurant: "Madame Chang", menu_images: ["/restaurants/madame_chang.webp"], link_web: 'https://madame-chang.com/', link_maps: ["https://maps.app.goo.gl/64j4ykh7BgYQnjkj8?g_st=aw"] },
+  { restaurant: "Kynd Baker", menu_images: ["/restaurants/kynd_baker.webp"], link_web: 'https://gofood.co.id/surabaya/restaurant/kynd-baker-cafe-citraland-445f5c84-0d50-40b8-9e37-5705e01dae9a', link_maps: ["https://maps.app.goo.gl/HPEFKbPLQXpGWfcZ8?g_st=aw"] },
+  { restaurant: "Jens Deli", menu_images: ["/restaurants/jens_deli.webp"], link_web: 'https://gofood.co.id/en/bali/restaurant/jen-deli-canggu-f128645b-6990-4d9a-a657-df185dde6816', link_maps: ["https://maps.app.goo.gl/gJaLJ4VhxLyyL7MBA?g_st=aw"] },
+  { restaurant: "IT bowl", menu_images: ["/restaurants/it_bowl.webp"], link_web: 'https://gofood.co.id/en/surabaya/restaurant/it-bowl-kitchen-sambikerep-7f52cc8e-ad7b-4659-b689-b1cb9698d0b8', link_maps: ["https://maps.app.goo.gl/jrmcfBUYQMnbtbYTA?g_st=aw"]},
+];

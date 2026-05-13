@@ -1,26 +1,36 @@
 "use client";
 
-import React, { useState } from "react";
-import { Flame, ArrowDown, Utensils, Clock, ShoppingCart, Check, Leaf } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { ArrowDown, Utensils, ShoppingCart, Check, Leaf, Globe, MapPin, Image as ImageIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
+import { foods } from '@/lib/foods';
 
-const foods = [
-  { name: 'Garden Salad', desc: 'Fresh greens with balsamic glaze and toasted walnuts.', kcal: '320', time: '10' },
-  { name: 'Salmon Poke Bowl', desc: 'Sustainably sourced salmon with edamame and brown rice.', kcal: '540', time: '15' },
-  { name: 'Hummus Wrap', desc: 'Whole wheat wrap with roasted veggies and garlic hummus.', kcal: '410', time: '12' },
-  { name: 'Lentil Soup', desc: 'Hearty organic lentils with carrots and fresh herbs.', kcal: '280', time: '20' },
-  { name: 'Quinoa Bowl', desc: 'Tri-color quinoa with avocado, black beans, and lime.', kcal: '450', time: '15' },
-  { name: 'Acai Berry Bowl', desc: 'Pure acai topped with granola, banana, and honey.', kcal: '380', time: '8' },
-  { name: 'Zucchini Pasta', desc: 'Spiralized zucchini with homemade pesto and cherry tomatoes.', kcal: '290', time: '18' },
-  { name: 'Tofu Tacos', desc: 'Corn tortillas with marinated tofu and spicy slaw.', kcal: '350', time: '20' }
-];
+const restaurantName = 'Greenly';
 
 export function RouletteSection() {
   const [isSpinning, setIsSpinning] = useState(false);
   const [rotation, setRotation] = useState(0);
   const [winner, setWinner] = useState<typeof foods[0] | null>(null);
+  const [carouselApi, setCarouselApi] = useState<CarouselApi>();
+
+  useEffect(() => {
+    if (!carouselApi) {
+      return;
+    }
+
+    const intervalId = setInterval(() => {
+      if (carouselApi.canScrollNext()) {
+        carouselApi.scrollNext();
+      } else {
+        carouselApi.scrollTo(0);
+      }
+    }, 3000);
+
+    return () => clearInterval(intervalId);
+  }, [carouselApi, winner]);
 
   const spinWheel = () => {
     if (isSpinning) return;
@@ -94,7 +104,7 @@ export function RouletteSection() {
                       transform={`rotate(${i * 45 + 22.5} 50 50)`}
                       className={cn(i % 2 === 1 ? "fill-primary" : "fill-white")}
                     >
-                      {food.name.split(' ')[0].toUpperCase()}
+                      {food.restaurant.split(' ')[0].toUpperCase()}
                     </text>
                   ))}
                 </g>
@@ -127,45 +137,95 @@ export function RouletteSection() {
                   {winner ? "Your Selection" : "Get Started"}
                 </span>
                 <h2 className="text-3xl font-heading font-black mt-2 text-foreground">
-                  {isSpinning ? "Spinning..." : winner ? winner.name : "Spin to decide!"}
+                  {isSpinning ? "Spinning..." : winner ? winner.restaurant : "Spin to decide!"}
                 </h2>
                 <p className="text-muted-foreground mt-2">
-                  {isSpinning ? "The kitchen is getting ready..." : winner ? winner.desc : "Click the button to find your perfect meal."}
+                  {isSpinning ? "The kitchen is getting ready..." : "Click the button to find your perfect meal."}
                 </p>
               </div>
 
               <div className="space-y-4">
-                <div className="flex items-center justify-between p-4 bg-background rounded-2xl border border-border">
+                <div className="flex flex-col gap-3 p-4 bg-background rounded-2xl border border-border">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
-                      <Flame className="w-5 h-5" />
+                      <Globe className="w-5 h-5" />
                     </div>
-                    <span className="font-bold text-foreground">Calories</span>
+                    <span className="font-bold text-foreground">Full Menu Detail</span>
                   </div>
-                  <span className="font-black text-primary">
-                    {isSpinning ? "--" : winner ? winner.kcal : "--"} kcal
-                  </span>
+                  <div className="font-medium text-primary break-all">
+                    {isSpinning ? "--" : winner ? (
+                      <a href={winner.link_web} target="_blank" rel="noreferrer" className="hover:underline">
+                        View Details
+                      </a>
+                    ) : "--"}
+                  </div>
                 </div>
                 
-                <div className="flex items-center justify-between p-4 bg-background rounded-2xl border border-border">
+                <div className="flex flex-col gap-3 p-4 bg-background rounded-2xl border border-border">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-xl bg-secondary flex items-center justify-center text-primary">
-                      <Clock className="w-5 h-5" />
+                      <MapPin className="w-5 h-5" />
                     </div>
-                    <span className="font-bold text-foreground">Prep Time</span>
+                    <span className="font-bold text-foreground">Locations</span>
                   </div>
-                  <span className="font-black text-foreground">
-                    {isSpinning ? "--" : winner ? winner.time : "--"} min
-                  </span>
+                  <div className="font-medium text-foreground flex flex-col gap-2">
+                    {isSpinning ? (
+                      <span>--</span>
+                    ) : winner && winner.link_maps && winner.link_maps.length > 0 ? (
+                      winner.link_maps.map((link, idx) => (
+                        <a key={idx} href={link} target="_blank" rel="noreferrer" className="text-primary hover:underline break-all flex items-start gap-2">
+                          <MapPin className="w-4 h-4 mt-1 flex-shrink-0" />
+                          <span>Location {idx + 1}</span>
+                        </a>
+                      ))
+                    ) : (
+                      <span>--</span>
+                    )}
+                  </div>
                 </div>
+
+                {!isSpinning && winner && winner.menu_images && winner.menu_images.length > 0 && (
+                  <div className="flex flex-col gap-3 p-4 bg-background rounded-2xl border border-border">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+                        <ImageIcon className="w-5 h-5" />
+                      </div>
+                      <span className="font-bold text-foreground">Menu</span>
+                    </div>
+                    <Carousel setApi={setCarouselApi} className="w-full relative group/carousel">
+                      <CarouselContent>
+                        {winner.menu_images.map((img, idx) => (
+                          <CarouselItem key={idx}>
+                            <a href={img} target="_blank" rel="noreferrer" className="block relative w-full h-48 sm:h-56 overflow-hidden rounded-xl border border-border/50 bg-muted flex items-center justify-center cursor-pointer">
+                              {/* eslint-disable-next-line @next/next/no-img-element */}
+                              <img src={img} alt={`${winner.restaurant} menu ${idx + 1}`} className="w-full h-full object-cover transition-transform duration-500 group-hover/carousel:scale-105" />
+                            </a>
+                          </CarouselItem>
+                        ))}
+                      </CarouselContent>
+                      {winner.menu_images.length > 1 && (
+                        <>
+                          <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2 opacity-0 group-hover/carousel:opacity-100 transition-opacity disabled:opacity-0 bg-background/80 hover:bg-background border-none shadow-sm h-8 w-8" />
+                          <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2 opacity-0 group-hover/carousel:opacity-100 transition-opacity disabled:opacity-0 bg-background/80 hover:bg-background border-none shadow-sm h-8 w-8" />
+                        </>
+                      )}
+                    </Carousel>
+                  </div>
+                )}
               </div>
 
               <Button 
+                asChild
                 disabled={!winner || isSpinning}
-                className="w-full mt-8 py-6 bg-primary text-primary-foreground rounded-2xl font-black shadow-lg shadow-primary/20 hover:shadow-xl hover:-translate-y-1 transition-all flex items-center justify-center gap-2"
+                className={cn(
+                  "w-full mt-8 py-6 bg-primary text-primary-foreground rounded-2xl font-black shadow-lg shadow-primary/20 hover:shadow-xl hover:-translate-y-1 transition-all flex items-center justify-center gap-2",
+                  (!winner || isSpinning) && "pointer-events-none opacity-50"
+                )}
               >
-                Order This Meal
-                <ShoppingCart className="w-5 h-5" />
+                <a href={winner?.link_web || "#"} target="_blank" rel="noreferrer">
+                  Visit Website
+                  <Globe className="w-5 h-5" />
+                </a>
               </Button>
             </Card>
 

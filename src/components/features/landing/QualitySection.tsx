@@ -20,22 +20,22 @@ export function QualitySection() {
           {/* Floating Badge */}
           <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground p-6 rounded-3xl shadow-xl max-w-[200px] animate-bounce-slow">
             <Leaf className="w-8 h-8 mb-2" />
-            <p className="text-sm font-bold leading-tight">100% Chef Prepared & Nutritionist Approved</p>
+            <p className="text-sm font-bold leading-tight">Kurasi Tempat Makan Sehat Terbaik</p>
           </div>
         </div>
         
         {/* Description on Right */}
         <div className="space-y-6" data-gsap="reveal">
           <div className="w-12 h-1 bg-primary rounded-full"></div>
-          <h2 className="text-4xl font-heading font-bold leading-tight text-foreground">Taste the Quality of <br/>Real, Whole Foods</h2>
+          <h2 className="text-4xl font-heading font-bold leading-tight text-foreground">Temukan Healthy Food <br/>di Surabaya Barat</h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Every meal in our roulette is crafted using locally sourced, seasonal ingredients. We believe that eating healthy shouldn't feel like a chore, but a gourmet experience you look forward to every day.
+            Menjadi bagian dari tren healthy food di Surabaya Barat kini lebih mudah. Kami telah mengumpulkan referensi tempat makan sehat yang menarik untuk Anda eksplorasi.
           </p>
           <ul className="space-y-4">
             {[
-              "No refined sugars or artificial additives",
-              "Sourced from organic local farms",
-              "Daily spinning menu for variety"
+              "Pilihan tempat makan sehat yang terpercaya",
+              "Visual menu yang menggugah selera",
+              "Lokasi strategis di sekitar wilayah Surabaya Barat"
             ].map((item, i) => (
               <li key={i} className="flex items-center gap-3 font-semibold text-foreground">
                 <div className="w-6 h-6 rounded-full bg-secondary flex items-center justify-center text-primary">
@@ -46,8 +46,8 @@ export function QualitySection() {
             ))}
           </ul>
           <div className="pt-4">
-            <Button variant="link" className="group text-primary font-bold text-lg p-0 flex items-center gap-2 hover:gap-4 transition-all">
-              Learn more about our ingredients
+            <Button variant="link" className="group text-primary font-bold text-lg p-0 flex items-center gap-2 hover:gap-4 transition-all" onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}>
+              Jelajahi Sekarang
               <ArrowRight className="w-5 h-5" />
             </Button>
           </div>

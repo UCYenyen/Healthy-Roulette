@@ -5,24 +5,24 @@ import { Card } from "@/components/ui/card";
 
 const features = [
   {
-    title: "Keto & Low Carb",
-    description: "High healthy fats and minimal carbs to keep your energy levels steady all day.",
+    title: "Rekomendasi Acak",
+    description: "Hilangkan kebingungan memilih. Biarkan roda kami merekomendasikan tempat healthy food terbaik secara instan.",
     icon: Flame,
     color: "primary",
     bgColor: "bg-secondary",
     textColor: "text-primary",
   },
   {
-    title: "Plant-Based Power",
-    description: "100% organic, vegan-friendly meals packed with plant proteins and vital nutrients.",
+    title: "Visual Interaktif",
+    description: "Dapatkan gambaran menu yang dijual dan visual tempat makan sebelum memutuskan untuk berkunjung.",
     icon: Leaf,
     color: "primary",
     bgColor: "bg-secondary",
     textColor: "text-primary",
   },
   {
-    title: "Performance Pro",
-    description: "Optimized macros for athletes and fitness enthusiasts looking to build and recover.",
+    title: "Hemat Waktu",
+    description: "Alamat dan lokasi tempat makan sehat di Surabaya Barat dapat langsung Anda temukan dengan cepat.",
     icon: Activity,
     color: "primary",
     bgColor: "bg-secondary",
@@ -35,8 +35,8 @@ export function FeatureCards() {
     <section className="w-full py-16 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 text-foreground">Diets Tailored For You</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">Choose your goal and let our roulette spin the perfect meal plan for your lifestyle.</p>
+          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 text-foreground">Fitur Unggulan Kami</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">Pengalaman menemukan makanan sehat kini jauh lebih seru, interaktif, dan hemat waktu.</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8" data-gsap="stagger-container">
@@ -47,8 +47,8 @@ export function FeatureCards() {
               </div>
               <h3 className="text-xl font-bold mb-3 text-foreground">{feature.title}</h3>
               <p className="text-muted-foreground mb-6">{feature.description}</p>
-              <Link href="#" className="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">
-                Explore Menu <ArrowRight className="w-5 h-5" />
+              <Link href="#how-it-works" className="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">
+                Mulai Eksplorasi <ArrowRight className="w-5 h-5" />
               </Link>
             </Card>
           ))}

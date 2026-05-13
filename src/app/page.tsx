@@ -4,6 +4,7 @@ import { Hero } from "@/components/features/landing/Hero";
 import { FeatureCards } from "@/components/features/landing/FeatureCards";
 import { QualitySection } from "@/components/features/landing/QualitySection";
 import { useGSAPAnimations } from "@/hooks/use-gsap-animations";
+import Link from "next/link";
 
 export default function Home() {
   // Initialize GSAP scroll and parallax animations
@@ -26,17 +27,14 @@ export default function Home() {
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full -ml-32 -mb-32 blur-3xl"></div>
             
             <h2 className="text-3xl md:text-5xl font-heading font-black mb-6 relative z-10 text-white">
-              Ready to spin for your health?
+              Siap Putar Makanan Sehatmu?
             </h2>
             <p className="text-lg opacity-90 mb-10 max-w-2xl mx-auto relative z-10 text-white/90">
-              Join thousands of others who have simplified their lives and improved their health with Healthy Roulette.
+              Dapatkan inspirasi makanan sehat dengan memutar roda dan temukan tempat makan sehat di Surabaya Barat.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
               <button className="px-10 py-4 bg-white text-primary rounded-full text-lg font-bold shadow-xl hover:scale-105 transition-transform">
-                Get Started Now
-              </button>
-              <button className="px-10 py-4 bg-primary border-2 border-white text-white rounded-full text-lg font-bold hover:bg-white hover:text-primary transition-all">
-                View Menu
+                <Link href="/roulette">Putar Sekarang</Link>
               </button>
             </div>
           </div>
