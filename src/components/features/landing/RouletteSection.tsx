@@ -61,10 +61,10 @@ export function RouletteSection() {
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-heading font-black mb-4 text-foreground">
-            Can't Decide? <span className="text-primary">Spin the Wheel!</span>
+            Bingung Memilih? <span className="text-primary">Putar Rodanya!</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-xl mx-auto">
-            Let fate choose your next healthy meal. Every slice is a chef-curated nutrition-packed delight.
+            Biarkan roda kami memilih tempat makanan sehat untukmu. Setiap tempat telah terkurasi dengan baik di Surabaya Barat.
           </p>
         </div>
 
@@ -119,7 +119,7 @@ export function RouletteSection() {
                   disabled={isSpinning}
                   className="w-16 h-16 md:w-20 md:h-20 bg-primary text-primary-foreground rounded-full flex flex-col items-center justify-center font-black text-xs md:text-sm hover:scale-105 transition-transform active:scale-95 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {isSpinning ? "SPINNING" : "SPIN"}
+                  {isSpinning ? "MEMUTAR" : "PUTAR"}
                 </button>
               </div>
             </div>
@@ -134,13 +134,13 @@ export function RouletteSection() {
               
               <div className="mb-6">
                 <span className="px-3 py-1 bg-secondary text-primary rounded-full text-xs font-bold uppercase tracking-widest">
-                  {winner ? "Your Selection" : "Get Started"}
+                  {winner ? "Pilihan Anda" : "Mulai"}
                 </span>
                 <h2 className="text-3xl font-heading font-black mt-2 text-foreground">
-                  {isSpinning ? "Spinning..." : winner ? winner.restaurant : "Spin to decide!"}
+                  {isSpinning ? "Memutar..." : winner ? winner.restaurant : "Putar untuk memilih!"}
                 </h2>
                 <p className="text-muted-foreground mt-2">
-                  {isSpinning ? "The kitchen is getting ready..." : "Click the button to find your perfect meal."}
+                  {isSpinning ? "Sedang mencari tempat terbaik..." : "Klik tombol putar untuk menemukan makanan sehatmu."}
                 </p>
               </div>
 
@@ -150,12 +150,12 @@ export function RouletteSection() {
                     <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
                       <Globe className="w-5 h-5" />
                     </div>
-                    <span className="font-bold text-foreground">Full Menu Detail</span>
+                    <span className="font-bold text-foreground">Detail Menu Lengkap</span>
                   </div>
                   <div className="font-medium text-primary break-all">
                     {isSpinning ? "--" : winner ? (
                       <a href={winner.link_web} target="_blank" rel="noreferrer" className="hover:underline">
-                        View Details
+                        Lihat Detail
                       </a>
                     ) : "--"}
                   </div>
@@ -166,7 +166,7 @@ export function RouletteSection() {
                     <div className="w-10 h-10 rounded-xl bg-secondary flex items-center justify-center text-primary">
                       <MapPin className="w-5 h-5" />
                     </div>
-                    <span className="font-bold text-foreground">Locations</span>
+                    <span className="font-bold text-foreground">Lokasi</span>
                   </div>
                   <div className="font-medium text-foreground flex flex-col gap-2">
                     {isSpinning ? (
@@ -175,7 +175,7 @@ export function RouletteSection() {
                       winner.link_maps.map((link, idx) => (
                         <a key={idx} href={link} target="_blank" rel="noreferrer" className="text-primary hover:underline break-all flex items-start gap-2">
                           <MapPin className="w-4 h-4 mt-1 flex-shrink-0" />
-                          <span>Location {idx + 1}</span>
+                          <span>Lokasi {idx + 1}</span>
                         </a>
                       ))
                     ) : (
@@ -223,7 +223,7 @@ export function RouletteSection() {
                 )}
               >
                 <a href={winner?.link_web || "#"} target="_blank" rel="noreferrer">
-                  Visit Website
+                  Kunjungi Website
                   <Globe className="w-5 h-5" />
                 </a>
               </Button>
@@ -238,7 +238,7 @@ export function RouletteSection() {
                   <Leaf className="w-4 h-4" />
                 </div>
               </div>
-              <p className="text-xs font-medium text-muted-foreground">Certified healthy by our nutritionists</p>
+              <p className="text-xs font-medium text-muted-foreground">Tempat makan sehat terkurasi</p>
             </div>
           </div>
         </div>
