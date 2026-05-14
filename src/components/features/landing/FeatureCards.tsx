@@ -47,9 +47,6 @@ export function FeatureCards() {
               </div>
               <h3 className="text-xl font-bold mb-3 text-foreground">{feature.title}</h3>
               <p className="text-muted-foreground mb-6">{feature.description}</p>
-              <Link href="#how-it-works" className="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">
-                Mulai Eksplorasi <ArrowRight className="w-5 h-5" />
-              </Link>
             </Card>
           ))}
         </div>
