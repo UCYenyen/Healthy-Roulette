@@ -85,7 +85,7 @@ export const foods: Foods[] = [
     restaurant: "Jens Deli",
     menu_images: ["/restaurants/jens_deli.webp"],
     link_web:
-      "https://gofood.co.id/en/bali/restaurant/jen-deli-canggu-f128645b-6990-4d9a-a657-df185dde6816",
+      "https://www.instagram.com/jensdeli.sby/",
     link_maps: ["https://maps.app.goo.gl/gJaLJ4VhxLyyL7MBA?g_st=aw"],
     map_images:[
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3UxiVCtShTMQjKZkca2j6Xw-jhg3lqDTNDA&s"
