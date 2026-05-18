@@ -46,7 +46,7 @@ export function AboutUsSections() {
                 <div className="w-10 h-10 bg-primary/10 text-primary rounded-full flex items-center justify-center">
                   <Users className="w-6 h-6" />
                 </div>
-                <span className="text-2xl font-black text-foreground">50+</span>
+                {/* <span className="text-2xl font-black text-foreground">50+</span> */}
               </div>
               <p className="text-sm text-muted-foreground font-medium">Rekomendasi tempat healthy food di Surabaya Barat.</p>
             </div>
