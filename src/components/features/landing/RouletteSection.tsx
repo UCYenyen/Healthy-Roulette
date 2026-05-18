@@ -188,9 +188,9 @@ export function RouletteSection() {
                               <CarouselContent>
                                 {winner.map_images.map((source, idx) => (
                                   <CarouselItem key={idx}>
-                                    <div className="block relative w-full h-48 sm:h-56 overflow-hidden rounded-xl border border-border/50 bg-muted">
-                                      <Image src={source} alt={`${winner.restaurant} lokasi ${idx + 1}`} className="w-full h-full object-cover" unoptimized draggable={false} width={1000} height={1000} />
-                                    </div>
+                                    <a href={source} target="_blank" rel="noreferrer" className="block relative w-full h-48 sm:h-56 overflow-hidden rounded-xl border border-border/50 bg-muted cursor-pointer">
+                                      <Image src={source} alt={`${winner.restaurant} lokasi ${idx + 1}`} className="w-full h-full object-cover transition-transform duration-500 group-hover/carousel:scale-105" unoptimized draggable={false} width={1000} height={1000} />
+                                    </a>
                                   </CarouselItem>
                                 ))}
                               </CarouselContent>
