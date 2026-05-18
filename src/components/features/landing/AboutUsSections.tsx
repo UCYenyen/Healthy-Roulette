@@ -1,9 +1,9 @@
 "use client";
 
-import React from "react";
 import { Heart, Users, ShieldCheck, Smile, Globe, Twitter, Linkedin, Facebook, Instagram, Flame } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useGSAPAnimations } from "@/hooks/use-gsap-animations";
+import Link from "next/link";
 
 export function AboutUsSections() {
   // Initialize reusable animations
@@ -110,31 +110,28 @@ export function AboutUsSections() {
               <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 text-foreground">Tim di Balik Layar</h2>
               <p className="text-muted-foreground max-w-xl">Berdedikasi untuk memberikan rekomendasi makanan sehat terbaik untuk Anda.</p>
             </div>
-            <Button variant="outline" className="rounded-full border-2 border-primary text-primary font-bold px-8 py-6 hover:bg-primary hover:text-white transition-all">
-              Hubungi Kami
-            </Button>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" data-gsap="stagger-container">
             <TeamMember 
-              name="Sarah Chen" 
-              role="Founder & CEO" 
-              image="https://randomuser.me/api/portraits/women/45.jpg" 
+              name="Budi Dharma Aryaputra" 
+              role="0506012310029" 
+              image="/team/budi.webp" 
             />
             <TeamMember 
-              name="Marcus Thorne" 
-              role="Head of Culinary" 
-              image="https://randomuser.me/api/portraits/men/32.jpg" 
+              name="Alexandra tifaNny" 
+              role="0106012410037" 
+              image="/team/alexandra.webp" 
             />
             <TeamMember 
-              name="Elena Rodriguez" 
-              role="Lead Nutritionist" 
-              image="https://randomuser.me/api/portraits/women/60.jpg" 
+              name="Cedric Imanuel" 
+              role="0106012410176" 
+              image="/team/cedric.webp" 
             />
             <TeamMember 
-              name="David Park" 
-              role="Operations Director" 
-              image="https://randomuser.me/api/portraits/men/85.jpg" 
+              name="Gishella Elzha" 
+              role="0106012410044" 
+              image="/team/gishella.webp" 
             />
           </div>
         </div>
@@ -157,10 +154,7 @@ export function AboutUsSections() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
             <Button className="px-10 py-7 bg-white text-primary rounded-full text-lg font-bold shadow-xl hover:scale-105 transition-transform hover:bg-white/90" onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}>
-              Mulai Spin Sekarang
-            </Button>
-            <Button variant="outline" className="px-10 py-7 bg-transparent border-2 border-white text-white rounded-full text-lg font-bold hover:bg-white hover:text-primary transition-all">
-              Lihat Lokasi Lain
+             <Link href={"/roulette"}>Mulai Spin Sekarang</Link>
             </Button>
           </div>
         </div>
