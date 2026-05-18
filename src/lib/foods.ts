@@ -11,8 +11,6 @@ export const foods: Foods[] = [
     ],
     map_images: [
       `https://lh3.googleusercontent.com/gps-cs-s/APNQkAFCLF4SAz_c_AqbIZPYajG7rE68ZMd6ls6wO3aL-Nsy9cbkIe8s7WBQwP6w8TiZmzmChgky9DoEFsa1ggv8zbwYi1Cw9RuYi-OIdooWOJRx2TtJVq0NeVfUPvf50KCRhRYoW9B5teQ5IW8=w408-h272-k-no`,
-      "https://www.google.com/maps/place/Greenly+-+Citraland/@-7.2908883,112.6552566,3a,75y,90t/data=!3m8!1e2!3m6!1sCIABIhC9ZViTkhNBmn4ZTpqwH0Z4!2e10!3e12!6shttps:%2F%2Flh3.googleusercontent.com%2Fgps-cs-s%2FAPNQkAFCLF4SAz_c_AqbIZPYajG7rE68ZMd6ls6wO3aL-Nsy9cbkIe8s7WBQwP6w8TiZmzmChgky9DoEFsa1ggv8zbwYi1Cw9RuYi-OIdooWOJRx2TtJVq0NeVfUPvf50KCRhRYoW9B5teQ5IW8%3Dw128-h86-k-no!7i1616!8i1080!4m7!3m6!1s0x2dd7fd8fa77412cb:0xc7094e535c8cc86b!8m2!3d-7.2910999!4d112.6552065!10e5!16s%2Fg%2F11r2crdnnd!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D#",
-      "https://www.google.com/maps/place/Greenly+-+Citraland/@-7.2908883,112.6552566,3a,75y,90t/data=!3m8!1e2!3m6!1sCIABIhC9ZViTkhNBmn4ZTpqwH0Z4!2e10!3e12!6shttps:%2F%2Flh3.googleusercontent.com%2Fgps-cs-s%2FAPNQkAFCLF4SAz_c_AqbIZPYajG7rE68ZMd6ls6wO3aL-Nsy9cbkIe8s7WBQwP6w8TiZmzmChgky9DoEFsa1ggv8zbwYi1Cw9RuYi-OIdooWOJRx2TtJVq0NeVfUPvf50KCRhRYoW9B5teQ5IW8%3Dw128-h86-k-no!7i1616!8i1080!4m7!3m6!1s0x2dd7fd8fa77412cb:0xc7094e535c8cc86b!8m2!3d-7.2910999!4d112.6552065!10e5!16s%2Fg%2F11r2crdnnd!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D#"
     ]
   },
   {
