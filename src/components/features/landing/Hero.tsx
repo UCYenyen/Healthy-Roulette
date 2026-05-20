@@ -29,17 +29,6 @@ export function Hero() {
               Cara Kerjanya
             </Button> */}
           </div>
-          
-          <div className="mt-12 flex items-center gap-4">
-            <div className="flex -space-x-3">
-              <img className="w-12 h-12 rounded-full border-4 border-background" src="https://randomuser.me/api/portraits/women/32.jpg" alt="User" />
-              <img className="w-12 h-12 rounded-full border-4 border-background" src="https://randomuser.me/api/portraits/men/44.jpg" alt="User" />
-              <img className="w-12 h-12 rounded-full border-4 border-background" src="https://randomuser.me/api/portraits/women/68.jpg" alt="User" />
-            </div>
-            <p className="text-sm font-medium">
-              Bergabung dengan eksplorator <span className="font-bold text-primary">Healthy Food</span> lainnya
-            </p>
-          </div>
         </div>
         
         <div className="relative" data-gsap="parallax" data-speed="0.15">
@@ -47,15 +36,15 @@ export function Hero() {
           <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-secondary/30 rounded-full blur-3xl"></div>
           <div className="relative rounded-3xl overflow-hidden shadow-2xl border-8 border-white transform lg:rotate-2 hover:rotate-0 transition-transform duration-500 group">
             <img 
-              src="https://uxmagic.blob.core.windows.net/public/agent-images/hero-restaurant-interior-1778169285362-fdrxfhoo3lb.png" 
+              src="/restaurants/greenly.webp" 
               alt="Healthy Roulette Restaurant Interior" 
               className="w-full h-full object-cover aspect-[4/3]" 
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
             <div className="absolute bottom-6 left-6 right-6 p-4 bg-white/90 backdrop-blur rounded-2xl flex items-center justify-between">
               <div>
-                <p className="text-xs font-bold text-primary uppercase tracking-widest">Our Flagship Bistro</p>
-                <h3 className="text-lg font-bold">Greenery Central Park</h3>
+                <p className="text-xs font-bold text-primary uppercase tracking-widest">Healthy Food Place</p>
+                <h3 className="text-lg font-bold">Greenly</h3>
               </div>
               <div className="flex items-center gap-1 text-primary">
                 <Star className="w-4 h-4 fill-current" />

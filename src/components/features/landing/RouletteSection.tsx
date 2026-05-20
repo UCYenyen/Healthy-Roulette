@@ -143,7 +143,7 @@ export function RouletteSection() {
           </div>
 
           {/* Result Card */}
-          {(isSpinning || winner) && (
+          {!isSpinning && winner && (
             <div className="w-full lg:w-[400px] flex flex-col gap-6">
               <Card className="p-8 rounded-3xl border border-border shadow-xl relative overflow-hidden bg-card">
                 <div className="absolute top-0 right-0 p-4 opacity-10">
