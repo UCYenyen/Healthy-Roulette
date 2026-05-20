@@ -49,7 +49,7 @@ export const foods: Foods[] = [
       "https://maps.app.goo.gl/LfLX5UU5o8WJXR6u8?g_st=aw",
     ],
     map_images:[
-      "https://p19-common-sign.tiktokcdn-us.com/tos-maliva-p-0068/oIZ6fFCRJDnD2qECkQAPALIKEfXDIOBELdIAZA~tplv-tiktokx-origin.image?dr=9636&x-expires=1779195600&x-signature=pq3xPv9Y3%2B7KF1FRIC9nHD9wAsY%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=55bbe6a9&idc=useast8"
+      "/restaurants/nude_bake_place.webp"
     ]
   },
   {
